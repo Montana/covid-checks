@@ -125,3 +125,7 @@ class Readings(db.Model):
         queryset = queryset.filter(id=user_id)
 
     return queryset
+
+## def get_username(self):
+## user = Users.query.get(self.user_id)
+## return user.username
