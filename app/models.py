@@ -47,19 +47,7 @@ class Users(db.Model, UserMixin):
         self.created = datetime.utcnow()
 
     def reading_today(self):
-        """
-        reading_today checks to see if the user has satisifed their reading for _today_.
-        Today is determined by a comparison for the return value of Utilities.get_date() to get 
-        today's current date in our YYYY-mm-dd format and the reading_date value of the very most 
-        recent entry in user.readings. 
-        If a user does not have any readings, False will be returned. 
-        If a user has readings but the most recent doesn't pass the date check, False is 
-        returned as we assume they have not yet done a reading for today. 
-        Args:
-            None
-        Returns: 
-            bool - True for a reading recorded today, False if no reading for today. 
-        """
+        
         if len(self.readings) < 1:
             return False
         else:
@@ -68,8 +56,6 @@ class Users(db.Model, UserMixin):
             else:
                 return False
 
-    #TODO: update all instances where this method is used to respect that it is staticmethod
-    @staticmethod
     def random_password():
       
         hex_value = [
