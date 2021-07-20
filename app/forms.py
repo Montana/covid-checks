@@ -30,12 +30,12 @@ def decimal_validation(form, field):
 class ReadingsForm(FlaskForm):
     temp = DecimalField('Temperature',
                         validators=[
-                            DataRequired(message='This field is required'),
+                            DataRequired(message='This field is required.'),
                             decimal_validation
                         ])
     oximeter = DecimalField('Oximeter',
                             validators=[
-                                DataRequired(message='This field is required'),
+                                DataRequired(message='This field is required.'),
                                 decimal_validation
                             ])
     symptoms = BooleanField('Have you or currently been experiencing COVID-19 symptoms?',
