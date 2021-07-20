@@ -98,7 +98,7 @@ class Readings(db.Model):
     user_id = db.Column(db.String, db.ForeignKey('users.id'))
     symptoms = db.Column(
         db.Boolean
-    )  # True == user indicated "symptoms" and system default is Reading == not-working
+    ) 
 
     def __init__(self, **kwargs):
         super(Readings, self).__init__(**kwargs)
